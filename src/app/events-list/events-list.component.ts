@@ -8,7 +8,7 @@ import { EventsService } from './shared/events.service';
     <h1>Upcoming Angualr events list</h1>
     <hr>
     <div class="row">
-      <app-event (click)="handleClick(event.name)" *ngFor="let event of events" [event]="event" class="col-md-5"></app-event>
+      <app-event *ngFor="let event of events" [event]="event" class="col-md-5"></app-event>
     </div>
   `,
 })
@@ -23,8 +23,10 @@ export class EventsListComponent implements OnInit {
     this.events = this.eventsService.getEvents()
   }
 
-  handleClick(message: string) {
-    this.toastrService.success(message)
-  }
+  // handleClick(message: string) {
+  //   this.toastrService.success(message)
+  // }
+
+
 
 }
