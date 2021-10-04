@@ -3,7 +3,7 @@ import { EventEmitter, Component, Input, OnInit, Output } from '@angular/core';
 @Component({
   selector: 'app-event',
   template: `
-    <div>
+    <div [routerLink]="['/events', event.id]">
       <div class="well hoverwell thumbnail">
         <h2>{{event?.name}}</h2>
         <div>Date: {{event?.date}}</div>
