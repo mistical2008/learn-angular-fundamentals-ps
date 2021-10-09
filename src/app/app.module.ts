@@ -11,6 +11,8 @@ import { EventDetailsComponent } from './event-details/event-details.component';
 import { RouterModule } from '@angular/router';
 import { AppRoutes } from './routes';
 import { EventNewComponent } from './event-new/event-new.component';
+import { ErrorNotFoundComponent } from './errors/error-not-found/error-not-found.component';
+import { ErrorNotFountGuard } from './errors/error-not-found/error-not-found.guard';
 
 @NgModule({
   imports: [
@@ -23,9 +25,10 @@ import { EventNewComponent } from './event-new/event-new.component';
     EventComponent,
     NavBarComponent,
     EventDetailsComponent,
-    EventNewComponent
+    EventNewComponent,
+    ErrorNotFoundComponent
   ],
-  providers: [EventsService, ToastrService],
+  providers: [EventsService, ToastrService, ErrorNotFountGuard],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
