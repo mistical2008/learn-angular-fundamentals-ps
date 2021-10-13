@@ -13,6 +13,7 @@ import { AppRoutes } from "./routes";
 import { EventNewComponent } from "./event-new/event-new.component";
 import { ErrorNotFoundComponent } from "./errors/error-not-found/error-not-found.component";
 import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.guard";
+import { EventsResolver } from "./events-list/shared/events.resolver";
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(AppRoutes)],
@@ -29,6 +30,7 @@ import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.gua
     EventsService,
     ToastrService,
     ErrorNotFountGuard,
+    EventsResolver,
     {
       provide: "canDeactivateCreateEvent",
       useValue: checkIsDirtyState,
@@ -37,6 +39,7 @@ import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.gua
   bootstrap: [EventsAppComponent],
 })
 export class AppModule {}
+
 export function checkIsDirtyState(component: EventNewComponent) {
   if (component.isDirty) {
     return confirm("Do you really want to leave the page without saving.");

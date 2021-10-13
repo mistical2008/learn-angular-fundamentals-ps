@@ -1,25 +1,30 @@
-import { Component, OnInit } from '@angular/core';
-import { ToastrService } from '../libs/toastr/toastr.service';
-import { EventsService } from './shared/events.service';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { ToastrService } from "../libs/toastr/toastr.service";
+import { EventsService } from "./shared/events.service";
 
 @Component({
-  selector: 'events-list',
+  selector: "events-list",
   template: `
     <h1>Upcoming Angualr events list</h1>
-    <hr>
+    <hr />
     <div class="row">
-      <app-event *ngFor="let event of events" [event]="event" class="col-md-5"></app-event>
+      <app-event
+        *ngFor="let event of events"
+        [event]="event"
+        class="col-md-5"
+      ></app-event>
     </div>
   `,
 })
 export class EventsListComponent implements OnInit {
-  events: any[]
+  events: any[];
   constructor(
-    private eventsService: EventsService,
-    private toastrService: ToastrService
-  ) { }
+    private toastrService: ToastrService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.events = this.eventsService.getEvents()
+    this.events = this.route.snapshot.data["events"];
   }
 }
