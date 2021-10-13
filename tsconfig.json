@@ -23,8 +23,6 @@
     "strictTemplates": true
   },
   "plugins": [
-    {
-      "name": "@angular/language-server"
-    }
+    {"name": "@angular/language-service"}
   ]
 }

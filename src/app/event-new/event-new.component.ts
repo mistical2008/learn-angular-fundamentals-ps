@@ -1,23 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-event-new',
-  templateUrl: './event-new.component.html',
-  styles: [
-  ]
+  selector: "app-event-new",
+  templateUrl: "./event-new.component.html",
+  styles: [],
 })
 export class EventNewComponent implements OnInit {
+  isDirty: boolean = true;
 
-  constructor(
-    private router: Router
-  ) { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   cancel(): void {
-    this.router.navigate(['/events'])
+    this.router.navigate(["/events"]);
   }
-
 }

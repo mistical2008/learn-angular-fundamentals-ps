@@ -6,9 +6,17 @@ import { EventNewComponent } from "./event-new/event-new.component";
 import { EventsListComponent } from "./events-list/events-list.component";
 
 export const AppRoutes: Routes = [
-  { path: 'events/new', component: EventNewComponent },
-  { path: 'events', component: EventsListComponent },
-  { path: 'events/:id', component: EventDetailsComponent, canActivate: [ErrorNotFountGuard] },
-  { path: '404', component: ErrorNotFoundComponent },
-  { path: '', redirectTo: 'events', pathMatch: 'full' },
-]
+  {
+    path: "events/new",
+    component: EventNewComponent,
+    canDeactivate: ["canDeactivateCreateEvent"],
+  },
+  { path: "events", component: EventsListComponent },
+  {
+    path: "events/:id",
+    component: EventDetailsComponent,
+    canActivate: [ErrorNotFountGuard],
+  },
+  { path: "404", component: ErrorNotFoundComponent },
+  { path: "", redirectTo: "events", pathMatch: "full" },
+];

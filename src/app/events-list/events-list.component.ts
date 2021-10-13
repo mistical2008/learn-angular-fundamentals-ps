@@ -22,11 +22,4 @@ export class EventsListComponent implements OnInit {
   ngOnInit(): void {
     this.events = this.eventsService.getEvents()
   }
-
-  // handleClick(message: string) {
-  //   this.toastrService.success(message)
-  // }
-
-
-
 }
