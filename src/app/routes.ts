@@ -1,10 +1,12 @@
 import { Routes } from "@angular/router";
 import { ErrorNotFoundComponent } from "./errors/error-not-found/error-not-found.component";
 import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.guard";
-import { EventDetailsComponent } from "./event-details/event-details.component";
-import { EventNewComponent } from "./event-new/event-new.component";
-import { EventsListComponent } from "./events-list/events-list.component";
-import { EventsResolver } from "./events-list/shared/events.resolver";
+import {
+  EventDetailsComponent,
+  EventNewComponent,
+  EventsListComponent,
+  EventsResolver,
+} from "./events";
 
 export const AppRoutes: Routes = [
   {

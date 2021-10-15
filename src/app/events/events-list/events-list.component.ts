@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { ToastrService } from "../libs/toastr/toastr.service";
-import { EventsService } from "./shared/events.service";
+import { ToastrService } from "src/app/libs/toastr/toastr.service";
 
 @Component({
   selector: "events-list",
