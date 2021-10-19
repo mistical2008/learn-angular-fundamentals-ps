@@ -29,8 +29,18 @@
       <div class="navbar-header navbar-right">
         <ul class="nav navbar-nav">
           <li>
-            <a routerLink="user/profile" routerLinkActive="link--active" routerLinkActiveOptions="{exact: true}">Welcome
-              John</a>
+            <a
+              *ngIf="!auth.isAuthenticated()"
+              routerLink="user/login"
+              routerLinkActive="link--active" 
+              routerLinkActiveOptions="{exact: true}"
+            >Login</a>
+            <a 
+              *ngIf="auth.isAuthenticated()"
+              routerLink="user/profile" 
+              routerLinkActive="link--active" 
+              routerLinkActiveOptions="{exact: true}"
+            >Welcome {{auth.currentUser.userName}}</a>
           </li>
         </ul>
       </div>

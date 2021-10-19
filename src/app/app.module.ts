@@ -16,6 +16,7 @@ import { RouterModule } from "@angular/router";
 import { AppRoutes } from "./routes";
 import { ErrorNotFoundComponent } from "./errors/error-not-found/error-not-found.component";
 import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.guard";
+import { AuthService } from "./user/login-form/auth.service";
 
 @NgModule({
   imports: [BrowserModule, RouterModule.forRoot(AppRoutes)],
@@ -33,6 +34,7 @@ import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.gua
     ToastrService,
     ErrorNotFountGuard,
     EventsResolver,
+    AuthService,
     {
       provide: "canDeactivateCreateEvent",
       useValue: checkIsDirtyState,
