@@ -19,7 +19,7 @@ import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.gua
 import { AuthService } from "./user/login-form/auth.service";
 
 @NgModule({
-  imports: [BrowserModule, RouterModule.forRoot(AppRoutes)],
+  imports: [BrowserModule,  RouterModule.forRoot(AppRoutes)],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
