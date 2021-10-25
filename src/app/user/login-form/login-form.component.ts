@@ -5,10 +5,14 @@ import { AuthService } from './auth.service';
 @Component({
   selector: 'user-login-form',
   templateUrl: './login-form.component.html',
+  styles: [`
+    em {float: right; color: red;}
+    `]
 })
 export class LoginFormComponent implements OnInit {
   userName: string
   password: string
+  mouseoverLogin: boolean
 
   constructor(
     private auth: AuthService,
@@ -18,7 +22,7 @@ export class LoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(formValues) {
+  login(formValues: {userName: string, password: string}): void {
     this.auth.loginUser(
       formValues.userName,
       formValues.password

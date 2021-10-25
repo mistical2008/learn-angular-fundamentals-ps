@@ -10,4 +10,4 @@ import { LoginFormComponent } from "./login-form/login-form.component";
   imports: [CommonModule, FormsModule, RouterModule.forChild(userRoutes)],
   declarations: [ProfileComponent, LoginFormComponent],
 })
-export class UserModule {}
+  export class UserModule {}
