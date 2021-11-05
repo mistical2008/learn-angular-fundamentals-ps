@@ -8,11 +8,13 @@
       <em *ngIf="sessionForm.controls.name.invalid && sessionForm.controls.name.dirty">Required</em>
       <input id="sessionName" formControlName="name" type="text" class="form-control" placeholder="session name..." />
     </div>
+
     <div class="form-group" [ngClass]="{'error': sessionForm.controls.presenter.invalid && sessionForm.controls.presenter.dirty}">
       <label for="eventDate">Presenter:</label>
       <em *ngIf="sessionForm.controls.presenter.invalid && sessionForm.controls.presenter.dirty">Required</em>
       <input id="presenter" formControlName="presenter" type="text" class="form-control" placeholder="presenter..." />
     </div>
+
     <div class="form-group" [ngClass]="{'error': sessionForm.controls.duration.invalid && sessionForm.controls.duration.dirty}">
       <label for="duration">Duration:</label>
       <em *ngIf="sessionForm.controls.duration.invalid && sessionForm.controls.duration.dirty">Required</em>
@@ -24,9 +26,17 @@
         <option value="4">Full Day</option>
       </select>
     </div>
-    <div class="form-group" [ngClass]="{'error': sessionForm.controls.level.invalid && sessionForm.controls.level.dirty}">
+
+    <div
+      class="form-group"
+      [ngClass]="{'error': sessionForm.controls.level.invalid && sessionForm.controls.level.dirty}"
+    >
       <label for="level">Level:</label>
-      <em *ngIf="sessionForm.controls.level.invalid && sessionForm.controls.level.dirty">Required</em>
+      <em 
+        *ngIf="sessionForm.controls.level.invalid && sessionForm.controls.level.dirty"
+      >
+        Required
+      </em>
       <select formControlName="level" class="form-control">
         <option value="">select level...</option>
         <option value="Beginner">Beginner</option>
@@ -34,7 +44,11 @@
         <option value="Advanced">Advanced</option>
       </select>
     </div>
-    <div class="form-group" [ngClass]="{'error': sessionForm.controls.abstract.invalid && sessionForm.controls.abstract.dirty}">
+
+    <div
+      class="form-group"
+      [ngClass]="{'error': sessionForm.controls.abstract.invalid && sessionForm.controls.abstract.dirty}"
+    >
       <label for="abstract">Abstract:</label>
       <em
         *ngIf="sessionForm.controls.abstract.invalid &&
@@ -52,6 +66,7 @@
       </em>
       <textarea id="abstract" formControlName="abstract" rows=3 class="form-control" placeholder="abstract..."></textarea>
     </div>
+
     <button type="submit" [disabled]="sessionForm.invalid" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-default">Cancel</button>
   </form>
