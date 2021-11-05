@@ -9,6 +9,7 @@ import {
   EventDetailsComponent,
   EventNewComponent,
   EventsResolver,
+  NewSessionComponent,
 } from "./events";
 import { NavBarComponent } from "./nav-bar/nav-bar.component";
 import { ToastrService } from "./libs/toastr/toastr.service";
@@ -34,6 +35,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     EventDetailsComponent,
     EventNewComponent,
     ErrorNotFoundComponent,
+    NewSessionComponent,
   ],
   providers: [
     EventsService,
