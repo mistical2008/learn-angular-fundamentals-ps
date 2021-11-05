@@ -17,8 +17,13 @@ export class EventsService {
     return subject;
   }
 
+  saveEvent(newEvent: IEvent) {
+    const event = { ...newEvent, id: 999, session: [] };
+    EVENTS.push(event);
+  }
+
   getEventById(id: number): IEvent {
-    return EVENTS.find((event:IEvent) => event.id === id);
+    return EVENTS.find((event: IEvent) => event.id === id);
   }
 }
 

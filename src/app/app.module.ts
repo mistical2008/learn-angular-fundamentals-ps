@@ -17,9 +17,15 @@ import { AppRoutes } from "./routes";
 import { ErrorNotFoundComponent } from "./errors/error-not-found/error-not-found.component";
 import { ErrorNotFountGuard } from "./errors/error-not-found/error-not-found.guard";
 import { AuthService } from "./user/login-form/auth.service";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
-  imports: [BrowserModule,  RouterModule.forRoot(AppRoutes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule.forRoot(AppRoutes),
+  ],
   declarations: [
     EventsAppComponent,
     EventsListComponent,
